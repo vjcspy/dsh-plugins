@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Session retention",
+    "description": "Delete chat Sessions older than N days"
+  }
+}

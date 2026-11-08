@@ -1,0 +1,22 @@
+# Bundle patch for dsh-session-retention.
+#
+# One `insert` row keyed by the package id. The id is load-bearing three times
+# over: it is the Loader row id, the settings namespace the configuration page
+# writes through, and the `<package>#<row id>` key the browser half registers
+# under `plugins.row.config`. A profile that serves a row with another id shows
+# no Configure control.
+#
+# `config` states the shipped policy explicitly so `dsh --profile <p> --dump-config`
+# shows it: a 30-day window, a daily tick, the destructive automatic sweep
+# DISARMED (`dryRun: true`), a 7-day trash grace window, and at most 500 moves
+# per request.
+- insert:
+    - id: dsh-session-retention
+      name: dsh-session-retention
+      config:
+        autoSweep: true
+        retentionDays: 30
+        sweepIntervalHours: 24
+        dryRun: true
+        trashGraceDays: 7
+        maxMovesPerRun: 500

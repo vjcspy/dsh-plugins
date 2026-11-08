@@ -1,0 +1,4 @@
+# Build output of this package only. The leading slash keeps the rule local: an
+# unanchored `lib/` would also exclude a source directory of that name.
+/lib/
+node_modules/
