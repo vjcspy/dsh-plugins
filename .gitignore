@@ -1,0 +1,13 @@
+# Installed dependencies
+node_modules/
+
+# Local build residue and logs
+dist/
+*.log
+
+# macOS
+.DS_Store
+
+# NOTE: build output is `/lib/` inside each package, and each package anchors
+# that rule itself. An unanchored `lib/` here would also exclude any source
+# directory named `lib` (see resources/workspaces/k/dsh/_lessons/260926-unanchored-gitignore-pattern.md).
